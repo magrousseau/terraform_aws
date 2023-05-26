@@ -1,5 +1,3 @@
-
-
 terraform {
   required_providers {
     aws = {
@@ -7,7 +5,16 @@ terraform {
       version = "4.38.0"
     }
   }
+  cloud {
+      organization = "magrousseau"
+
+      workspaces {
+        name = "gh-actions"
+      }
+    }
 }
+
+
 
 provider "aws" {
   region = "eu-west-1"
